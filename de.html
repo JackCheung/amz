@@ -16,10 +16,25 @@
         }
     </style>
     <script>
-        if (document.referrer.indexOf(‘wsdmj.com’) !== -1) {
+        //         if (document.referrer.indexOf(‘wsdmj.com’) !== -1) {
+        //             window.location.href = ‘https://baidu.com/’;
+        // } else {
+        //             // do nothing
+        //         }
+
+
+
+        var referrerUrl = document.referrer;
+        var localUrl = window.location.href.toString();
+        var localHostname = window.location.hostname;
+        var localPort = window.location.port;
+        var localProtocol = window.location.protocol;
+        var domain = localProtocol + "//" + localHostname + ":" + localPort;
+        if (referrerUrl != '' && referrerUrl.indexOf(domain) == 0) {
             window.location.href = ‘https://baidu.com/’;
-} else {
-            // do nothing
+		} else {
+            //来自其他网站url
+
         }
     </script>
 </head>
